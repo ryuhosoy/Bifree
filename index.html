@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API テスト</title>
+</head>
+<body>
+    <h1>APIテスト</h1>
+    
+    <script>
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoicG9yb2thcmktYXBpIiwiZmVhdHVyZSI6WyJleHBvcnRfcm9vbXNfZmVhdHVyZSIsImFwcGxpY2F0aW9uX2luZm9fc2VhcmNoX2ZlYXR1cmUiLCJwcmljZV9zaGFyZWRfZGVsZXRlX2ZlYXR1cmUiLCJhbmFseXRpY3NfZG93bmxvYWRfcm9vbV9mZWF0dXJlIiwiZXhwb3J0X2NvbnRyYWN0c19mZWF0dXJlIiwic3VnZ2VzdF9mZWVfZmVhdHVyZSIsInByaWNlX3NoYXJlZF9lZGl0X2ZlYXR1cmUiLCJhcHBsaWNhdGlvbl9pbmZvX3NlYXJjaF9yZWZlcmVuY2VfZmVhdHVyZSIsImRvY3VtZW50c19nZXRfZXN0aW1hdGlvbl9wZGZfZmVhdHVyZSIsImltcG9ydF9yb29tc19mZWF0dXJlIiwiYW5hbHl0aWNzX3NlYXJjaF9hcmVhX2ZlYXR1cmUiLCJ0b2tlbnNfZ2V0X2ZlYXR1cmUiLCJjYW1wYWlnbl9wb3N0X2ZlYXR1cmUiLCJhY2NvdW50X3Bvc3RfZmVhdHVyZSIsImNvbXBhbnlfc2VhcmNoX2ZlYXR1cmUiLCJleHBvcnRfYWNjb3VudHNfZmVhdHVyZSIsImV4cGVuc2VfcG9zdF9mZWF0dXJlIiwibWFpbF9nZXRfdGVtcGxhdGVfZmVhdHVyZSIsImV4cGVuc2VfZG93bmxvYWRfdGVtcGxhdGVfZmVhdHVyZSIsImNvbnRyYWN0X3NlYXJjaF9mZWF0dXJlIiwiZXhwZW5zZV9kZWxldGVfZmVhdHVyZSIsImxvZ2luX2RlbGV0ZV9mZWF0dXJlIiwiZXhwb3J0X2NhbXBhaWduc19mZWF0dXJlIiwic3VnZ2VzdF9jYW1wYWlnbnNfZmVhdHVyZSIsImNvbnRhY3RfZGVsZXRlX2ZlYXR1cmUiLCJnZXRfcGF5bWVudF9saW5rX2ZlYXR1cmUiLCJjb250cmFjdF9nZXRfZmVhdHVyZSIsInJlcXVlc3Rfc2lnbl9mZWF0dXJlIiwicm9vbV9nZXRfZmVhdHVyZSIsImNhbXBhaWduX3NlYXJjaF9mZWF0dXJlIiwic2NoZWR1bGVfcmVmZXJlbmNlX2ZlYXR1cmUiLCJmcm9udHNpdGVfZ2V0X2NhbXBhaWduX2ZlYXR1cmUiLCJjdXN0b21lcl9nZXRfcmVmZXJlbmNlX2ZlYXR1cmUiLCJmaWxlX3VwbG9hZF9mZWF0dXJlIiwiYWNjb3VudF9nZXRfZmVhdHVyZSIsImNvbXBhbnlfcmVmZXJlbmNlX2ZlYXR1cmUiLCJjb250cmFjdF9zY2hlZHVsZWRfc2VydmljZV90YXNrX3B1dF9mZWF0dXJlIiwic3VnZ2VzdF9mZWVfZXh0cmFfZmVhdHVyZSIsImRvY3VtZW50c19nZXRfY29udHJhY3RfcGRmX2ZlYXR1cmUiLCJhbmFseXRpY3NfcmV2cGFyX2ZlYXR1cmUiLCJtYWlsX2dldF90ZW1wbGF0ZXNfZmVhdHVyZSIsImFuYWx5dGljc19zZWFyY2hfZmVhdHVyZSIsImVtYWlsX2luYm94X2dldF9mZWF0dXJlIiwibG9naW5fcG9zdF9mZWF0dXJlIiwiY29udHJhY3RfcG9zdF9mZWF0dXJlIiwiYW5hbHl0aWNzX2Rvd25sb2FkX2FyZWFfZmVhdHVyZSIsImNvbXBhbnlfZGVsZXRlX2ZlYXR1cmUiLCJhY2NvdW50X3NlYXJjaF9mZWF0dXJlIiwiY2FtcGFpZ25zX2dldF9zZWFyY2hfcmVmZXJlbmNlX2ZlYXR1cmUiLCJjb250YWN0X2NyZWF0ZV9zY2hlZHVsZWRfZW1haWxzX2ZlYXR1cmUiLCJjb250YWN0X2dldF9yZWZlcmVuY2VfZmVhdHVyZSIsImV4cGVuc2VfcG9zdF9jYXRlZ29yeV9mZWF0dXJlIiwiY29tcGFueV9wb3N0X2ZlYXR1cmUiLCJyb29tX3Bvc3RfZmVhdHVyZSIsImV4cG9ydF9jdXN0b21lcnNfZmVhdHVyZSIsInByaWNlX2NhbGlicmF0aW9uX2RlbGV0ZV9mZWF0dXJlIiwic2NoZWR1bGVfc2VhcmNoX2ZlYXR1cmUiLCJleHBvcnRfY29udGFjdHNfZmVhdHVyZSIsInJlZmVyZW5jZV9nZXRfemlwY29kZV9pbmZvX2ZlYXR1cmUiLCJhcHByb3ZlX2VzdGltYXRpb25zX2ZlYXR1cmUiLCJjdXN0b21lcl9wb3N0X2ZlYXR1cmUiLCJlbWFpbF9pbmJveF9zZWFyY2hfZmVhdHVyZSIsImFwYXJ0bWVudF9kZWxldGVfZmVhdHVyZSIsImFwcGxpY2F0aW9uX2luZm9fcHV0X2ZlYXR1cmUiLCJnZXRfZW1haWxfZmVhdHVyZSIsImFjY291bnRfZGVsZXRlX2ZlYXR1cmUiLCJ0b2tlbnNfZGVsZXRlX2ZlYXR1cmUiLCJzZWN1cml0eV9yb29tX2xvY2tfbG9nX3NlYXJjaF9mZWF0dXJlIiwiYXBhcnRtZW50X3Bvc3RfZmVhdHVyZSIsImNvbnRhY3RfcG9zdF9mZWF0dXJlIiwiY3VzdG9tZXJfc2VhcmNoX2ZlYXR1cmUiLCJleHBvcnRfYXBhcnRtZW50c19mZWF0dXJlIiwiZnJvbnRzaXRlX3NlYXJjaF9yb29tc19mZWF0dXJlIiwiZXN0aW1hdGlvbl9wb3N0X2ZlYXR1cmUiLCJjdXN0b21lcl9kZWxldGVfZmVhdHVyZSIsImFjY291bnRfc2VhcmNoX3JlZmVyZW5jZV9mZWF0dXJlIiwiY2FtcGFpZ25fZGVsZXRlX2ZlYXR1cmUiLCJkb2N1bWVudHNfZ2V0X2ludm9pY2VfcGRmX2ZlYXR1cmUiLCJjdXN0b21lcl9nZXRfZmVhdHVyZSIsImNvbnRyYWN0X2dldF9yZWZlcmVuY2VfZmVhdHVyZSIsImFwcGxpY2F0aW9uX2luZm9fZGVsZXRlX2ZlYXR1cmUiLCJleHBlbnNlX3NlYXJjaF9yZWZlcmVuY2VfZmVhdHVyZSIsImFuYWx5dGljc19kb3dubG9hZF9mZWF0dXJlIiwic2hhcmVkX2Nvc3Rfc2VhcmNoX2ZlYXR1cmUiLCJleHBlbnNlX2Rvd25sb2FkX2ZlYXR1cmUiLCJlc3RpbWF0aW9uX2RlbGV0ZV9mZWF0dXJlIiwiY2FtcGFpZ25fZ2V0ZnVsbF9mZWF0dXJlIiwiY29udGFjdF9zZWFyY2hfZmVhdHVyZSIsIm1haWxfdGVtcGxhdGVfZ2V0X2ZlYXR1cmUiLCJwcmljZV9zaGFyZWRfZ2V0X2Z1bGxfZmVhdHVyZSIsImFwcGxpY2F0aW9uX2Zvcm1fY3JlYXRlX2ZlYXR1cmUiLCJleHBlbnNlX3NlYXJjaF9mZWF0dXJlIiwicm9vbV9kZWxldGVfZmVhdHVyZSIsInN0YXRpc3RpY3NfZ2V0X2FwYXJ0bWVudF9sb2NhdGlvbnNfZmVhdHVyZSIsInBhcmtpbmdfc2VhcmNoX2ZlYXR1cmUiLCJkZWxldGVfbWFpbF9xdWV1ZV9mZWF0dXJlIiwibWFpbF9jb21wb3NlX2ZlYXR1cmUiLCJleHBlbnNlX3VwbG9hZF9mZWF0dXJlIiwibWFpbF90ZW1wbGF0ZV9kZWxldGVfZmVhdHVyZSIsImV4cGVuc2VfZ2V0ZnVsbF9mZWF0dXJlIiwic2VjdXJpdHlfcm9vbV9sb2NrX2xvZ19yZWZlcmVuY2VfZmVhdHVyZSIsImdldF9uZWFyZXN0X3N0YXRpb25zX2ZlYXR1cmUiLCJjb250YWN0X2dldF9mZWF0dXJlIiwibWFpbF9hdXRvbWF0aW9uX3NlYXJjaF9mZWF0dXJlIiwic2VhcmNoX21haWxfcXVldWVfZmVhdHVyZSIsImFwYXJ0bWVudF9zZWFyY2hfZmVhdHVyZSIsImltcG9ydF9hcGFydG1lbnRzX2ZlYXR1cmUiLCJhcGFydG1lbnRfZ2V0X2ZlYXR1cmUiLCJtYWlsX3RlbXBsYXRlX3Bvc3RfZmVhdHVyZSIsImFwYXJ0bWVudF9yZWZlcmVuY2VfZmVhdHVyZSIsImNvbXBhbnlfZ2V0X2ZlYXR1cmUiLCJlbWFpbF9pbmJveF9kZWxldGVfZmVhdHVyZSIsImFuYWx5dGljc19zZWFyY2hfcm9vbV9mZWF0dXJlIiwiYXBwbGljYXRpb25faW5mb19nZXRfZmVhdHVyZSIsInByaWNlX2NhbGlicmF0aW9uX2dldF9mdWxsX2ZlYXR1cmUiLCJmcm9udHNpdGVfcmVmZXJlbmNlX2ZlYXR1cmUiLCJtYWlsX3RlbXBsYXRlX3NlYXJjaF9mZWF0dXJlIiwiZXhwb3J0X2FwcGxpY2F0aW9uc19mZWF0dXJlIiwiZXhwZW5zZV9wb3N0X2Rlc2NyaXB0aW9uX2ZlYXR1cmUiLCJwcmljZV9jYWxpYnJhdGlvbl9lZGl0X2ZlYXR1cmUiLCJkb2N1bWVudHNfZ2V0X3JlY2VpcHRfcGRmX2ZlYXR1cmUiXSwibmJmIjoxNzM3NzE5MzA2LCJleHAiOjE3Mzc3Njk0NjYsImlzcyI6Im5leHVzLW1vbnRobHkiLCJhdWQiOiJuZXh1cy1tb250aGx5LXRhcmdldC05In0.1Of6eoHqYIKnGlH73-kMwGDhKKHCE8rdfJ0cVQMNtRk';
+        const queryParams = {
+            id: '000ca859-592f-4b12-9ac1-23f28e6b509f'
+        };
+
+        const queryString = new URLSearchParams(queryParams).toString();
+        
+        fetch(`https://test-api.nexus-monthly.org/api/campaign/get`, {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json',
+                'Fingerprint': 'application-name', 
+                'Language': 'jp',
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('APIレスポンス:', data);
+        })
+        .catch(error => {
+            console.error('エラー:', error);
+            // 400エラーの場合の処理
+            if (error.message.includes('400')) {
+                console.error('リクエストパラメータが不正です。パラメータを確認してください。');
+            }
+        });
+
+        // 参照APIの呼び出し
+        fetch('https://test-api.nexus-monthly.org/api/apartments/reference', {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json',
+                'Fingerprint': 'application-name',
+                'Language': 'jp',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('参照APIレスポンス:', data);
+        })
+        .catch(error => {
+            console.error('エラー:', error);
+        });
+        
+    </script>
+</body>
+</html> 
